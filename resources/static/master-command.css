@@ -1,0 +1,198 @@
+:root {
+    --bg-main: #030712;
+    --bg-card: #0b1222;
+    --bg-input: #060a14;
+    --border-color: #1e293b;
+    --primary: #3b82f6;
+    --accent: #06b6d4;
+    --success: #10b981;
+    --danger: #ef4444;
+    --purple: #8b5cf6;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.navbar {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 14px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+
+.brand-logo {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #2563eb, #06b6d4, #10b981);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 16px;
+    color: #fff;
+}
+
+.brand-title h1 { font-size: 18px; font-weight: 800; }
+.brand-title span { font-size: 12px; color: var(--text-muted); }
+
+.nav-links { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.nav-btn {
+    background: var(--bg-input);
+    color: #e2e8f0;
+    border: 1px solid var(--border-color);
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: #fff;
+    border: none;
+}
+
+.main-wrapper { max-width: 1280px; margin: 22px auto; padding: 0 20px; }
+
+/* Top Live Counters */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.kpi-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 16px 20px;
+}
+
+.kpi-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; }
+.kpi-val { font-size: 26px; font-weight: 800; margin-top: 4px; color: #38bdf8; }
+
+.master-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+@media (max-width: 920px) { .master-grid { grid-template-columns: 1fr; } }
+
+.panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.panel-header h2 { font-size: 16px; font-weight: 700; }
+
+/* Hands-Free Bilingual SOS Box */
+.sos-mic-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #dc2626, #7c3aed);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-bottom: 14px;
+}
+
+textarea, select {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 11px 13px;
+    color: #fff;
+    font-size: 13px;
+    margin-bottom: 12px;
+    font-family: inherit;
+}
+
+.btn-execute {
+    width: 100%;
+    background: linear-gradient(135deg, #06b6d4, #10b981);
+    color: #030712;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.unified-output {
+    margin-top: 16px;
+    background: var(--bg-input);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 13px;
+    white-space: pre-wrap;
+    display: none;
+}
+
+/* 7-Microservice Radar List */
+.service-list { display: flex; flex-direction: column; gap: 10px; }
+
+.service-row {
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-name { font-size: 13px; font-weight: 700; color: #fff; }
+.service-ep { font-size: 11px; color: var(--text-muted); font-family: monospace; }
+.online-dot {
+    background: rgba(16, 185, 129, 0.16);
+    color: #34d399;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+}

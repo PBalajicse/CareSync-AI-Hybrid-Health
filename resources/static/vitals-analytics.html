@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareSync AI | Offline SOS QR Passport & Vitals Telemetry</title>
+    <link rel="stylesheet" href="/vitals-analytics.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="brand">
+            <div class="brand-logo">QR</div>
+            <div class="brand-title">
+                <h1>CareSync Offline SOS Passport & Vitals Telemetry</h1>
+                <span>Zero-Internet Scannable Medical ID • Live Fever Progression Graph</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="/index.html" class="nav-btn">🩺 Triage</a>
+            <a href="/family-hub.html" class="nav-btn">👨‍👩‍👧‍👦 Vault</a>
+            <a href="/emergency-command.html" class="nav-btn">🚑 108</a>
+            <a href="/agentic-command.html" class="nav-btn">🤖 Agentic</a>
+            <a href="/vitals-analytics.html" class="nav-btn active">🪪 QR & Charts</a>
+        </div>
+    </div>
+</header>
+
+<main class="main-wrapper">
+    <div class="analytics-grid">
+        <!-- Left: Offline SOS QR Medical Passport Generator -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>🪪 Offline SOS QR Medical Passport</h2>
+            </div>
+
+            <div class="input-row">
+                <input type="text" id="passportNameInput" value="Aarav" placeholder="Enter patient name (e.g., Aarav)">
+                <button type="button" id="generateQrBtn" class="btn-primary">Generate QR ID</button>
+            </div>
+
+            <div class="passport-card">
+                <div class="passport-banner">EMERGENCY MEDICAL PASSPORT • OFFLINE READY</div>
+                <h3 id="cardPatientTitle" style="font-size:17px; color:#fff;">Aarav (Child)</h3>
+                <div class="qr-frame">
+                    <canvas id="sosQrCanvas" width="180" height="180"></canvas>
+                </div>
+                <p style="font-size:11px; color:#38bdf8;">Paramedics can inspect this ID offline without internet</p>
+                <div id="passportTextPayload" class="passport-details">Loading clinical passport...</div>
+                <button type="button" class="btn-primary" style="margin-top:12px; width:100%;" onclick="window.print()">🖨️ Print Wallet SOS QR Card</button>
+            </div>
+        </div>
+
+        <!-- Right: Live Fever Curve & Hybrid AI Latency Benchmark -->
+        <div>
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>📈 Patient Temperature & Risk Progression Curve</h2>
+                </div>
+                <div class="chart-canvas-wrap">
+                    <canvas id="vitalsChartCanvas" width="600" height="240"></canvas>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>⚡ Hybrid AI Inference Latency Benchmark</h2>
+                </div>
+                <div class="bench-grid">
+                    <div class="bench-card">
+                        <div class="bench-title">On-Device AI (Offline Nano)</div>
+                        <div class="bench-speed">~38 ms</div>
+                        <div class="bench-sub">Zero Network • 100% Privacy • Instant First-Aid</div>
+                    </div>
+                    <div class="bench-card">
+                        <div class="bench-title">Cloud Gemini 2.5 Flash</div>
+                        <div class="bench-speed" style="color:#38bdf8;">~620 ms</div>
+                        <div class="bench-sub">Deep Clinical Reasoning • Bilingual Synthesis</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="/vitals-analytics.js"></script>
+</body>
+</html>

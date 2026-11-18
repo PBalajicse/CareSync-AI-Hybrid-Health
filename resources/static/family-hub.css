@@ -1,0 +1,187 @@
+:root {
+    --bg-main: #050a14;
+    --bg-card: #0e1628;
+    --bg-input: #070c18;
+    --border-color: #1e293b;
+    --primary: #2563eb;
+    --accent: #06b6d4;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.navbar {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 14px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #06b6d4, #2563eb);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+    color: #fff;
+}
+
+.brand-title h1 { font-size: 18px; font-weight: 800; }
+.brand-title span { font-size: 12px; color: var(--text-muted); }
+
+.nav-links { display: flex; gap: 10px; align-items: center; }
+
+.nav-btn {
+    background: var(--bg-input);
+    color: #e2e8f0;
+    border: 1px solid var(--border-color);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    border: none;
+}
+
+.main-wrapper { max-width: 1240px; margin: 24px auto; padding: 0 20px; }
+
+.hub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 22px;
+    align-items: start;
+}
+
+@media (max-width: 880px) { .hub-grid { grid-template-columns: 1fr; } }
+
+.panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 22px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.panel-header h2 { font-size: 16px; font-weight: 700; }
+
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.form-group { margin-bottom: 14px; }
+
+label { display: block; font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 5px; }
+
+input, select {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 12px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 13px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Member Cards */
+.member-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+
+.member-card {
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.member-card:hover { border-color: var(--accent); }
+
+.member-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.blood-tag {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.member-name { font-size: 15px; font-weight: 700; color: #fff; }
+.member-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+/* Care Plan & Google FHIR Box */
+.care-plan-box {
+    background: var(--bg-input);
+    border: 1px solid var(--success);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 16px;
+    display: none;
+}
+
+.care-plan-box ul { margin-left: 18px; margin-top: 8px; font-size: 13px; color: #e2e8f0; }
+.care-plan-box li { margin-bottom: 6px; }
+
+.fhir-box {
+    background: #030712;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 14px;
+    font-family: monospace;
+    font-size: 12px;
+    color: #38bdf8;
+    white-space: pre-wrap;
+    max-height: 280px;
+    overflow-y: auto;
+}

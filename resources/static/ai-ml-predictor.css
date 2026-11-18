@@ -1,0 +1,167 @@
+:root {
+    --bg-main: #030712;
+    --bg-card: #0b1222;
+    --bg-input: #060a14;
+    --border-color: #1e293b;
+    --primary: #3b82f6;
+    --accent: #06b6d4;
+    --purple: #8b5cf6;
+    --success: #10b981;
+    --danger: #ef4444;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.navbar {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 14px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 15px;
+    color: #fff;
+}
+
+.brand-title h1 { font-size: 18px; font-weight: 800; }
+.brand-title span { font-size: 12px; color: var(--text-muted); }
+
+.nav-links { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.nav-btn {
+    background: var(--bg-input);
+    color: #e2e8f0;
+    border: 1px solid var(--border-color);
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: #fff;
+    border: none;
+}
+
+.main-wrapper { max-width: 1280px; margin: 24px auto; padding: 0 20px; }
+
+.ml-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 22px;
+    align-items: start;
+}
+
+@media (max-width: 900px) { .ml-grid { grid-template-columns: 1fr; } }
+
+.panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.panel-header h2 { font-size: 16px; font-weight: 700; }
+
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.form-group { margin-bottom: 14px; }
+label { display: block; font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 5px; }
+
+input, textarea {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 12px;
+    color: #fff;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.btn-ml {
+    width: 100%;
+    background: linear-gradient(135deg, #2563eb, #8b5cf6);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* ML Algorithm Result Cards */
+.algo-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+@media (max-width: 680px) { .algo-cards { grid-template-columns: 1fr; } }
+
+.algo-card {
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+}
+
+.algo-name { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.algo-val { font-size: 22px; font-weight: 800; color: #38bdf8; margin-top: 6px; }
+.algo-sub { font-size: 11px; color: #cbd5e1; margin-top: 4px; }
+
+.ml-json-box {
+    background: #030712;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px;
+    font-family: monospace;
+    font-size: 12px;
+    color: #a5b4fc;
+    white-space: pre-wrap;
+}

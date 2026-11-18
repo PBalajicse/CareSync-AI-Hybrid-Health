@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareSync AI | Enterprise Offline-First Clinical Command</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/style.css?v=4">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="brand">
+            <div class="brand-logo">C+</div>
+            <div class="brand-title">
+                <h1>CareSync AI</h1>
+                <span>Enterprise Offline-First Clinical Triage & Pharmacovigilance</span>
+            </div>
+        </div>
+        <div class="nav-actions">
+			<a href="/genai-rag-lab.html" class="btn-outline" style="border-color:#06b6d4; color:#67e8f9;">🧠 GenAI RAG</a>
+			<a href="/vision-scanner.html" class="btn-outline" style="border-color:#ec4899; color:#f472b6;">📸 Vision AI</a>
+			<a href="/vitals-analytics.html" class="btn-outline" style="border-color:#10b981; color:#6ee7b7;">🪪 QR & Charts</a>
+			<a href="/agentic-command.html" class="btn-outline" style="border-color:#8b5cf6; color:#c4b5fd;">🤖 Agentic AI</a>
+			<a href="/family-hub.html" class="btn-outline">👨‍👩‍👧‍👦 Family Vault & FHIR</a>
+			<a href="/emergency-command.html" class="btn-outline" style="border-color:#ef4444; color:#fca5a5;">🚑 108 Dispatch</a>
+
+            <select id="langSelect" style="width:auto; padding:6px 10px; font-size:12px;">
+                <option value="EN">🌐 English</option>
+                <option value="TA">🌐 தமிழ் (Tamil)</option>
+            </select>
+            <a href="/api/health/export/csv" class="btn-outline">📥 Export CSV</a>
+            <div id="netStatusPill" class="status-pill status-online">
+                <span id="netStatusText">ONLINE • Cloud + Nano Ready</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="main-wrapper">
+    <!-- 6-Card Live Java Enterprise Analytics -->
+    <section class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-label">Total DB Records</div>
+            <div id="statTotal" class="stat-value">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">High Emergency</div>
+            <div id="statHighRisk" class="stat-value" style="color: #f87171;">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Child Cases (0-12y)</div>
+            <div id="statChild" class="stat-value" style="color: #38bdf8;">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Senior Cases (60+)</div>
+            <div id="statSenior" class="stat-value" style="color: #c084fc;">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Offline AI Runs</div>
+            <div id="statOffline" class="stat-value" style="color: #fbbf24;">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Offline Queue</div>
+            <div id="offlineCounter" class="stat-value" style="color: #fb923c;">0</div>
+        </div>
+    </section>
+
+    <!-- Live Visual Telemetry Bars -->
+    <section class="analytics-banner">
+        <div class="chart-box">
+            <h3>Hybrid AI Inference Distribution (Cloud vs On-Device)</h3>
+            <div class="progress-row">
+                <div class="progress-label"><span>Cloud Gemini (Online)</span><span id="pctOnline">0%</span></div>
+                <div class="progress-track"><div id="barOnline" class="progress-fill" style="width:0%; background:#10b981;"></div></div>
+            </div>
+            <div class="progress-row">
+                <div class="progress-label"><span>On-Device Nano (Offline)</span><span id="pctOffline">0%</span></div>
+                <div class="progress-track"><div id="barOffline" class="progress-fill" style="width:0%; background:#f59e0b;"></div></div>
+            </div>
+        </div>
+        <div class="chart-box">
+            <h3>Vulnerable Age-Group Triage Breakdown</h3>
+            <div class="progress-row">
+                <div class="progress-label"><span>Pediatric Cases (Child 0-12y)</span><span id="pctChild">0%</span></div>
+                <div class="progress-track"><div id="barChild" class="progress-fill" style="width:0%; background:#06b6d4;"></div></div>
+            </div>
+            <div class="progress-row">
+                <div class="progress-label"><span>Geriatric Cases (Senior 60+)</span><span id="pctSenior">0%</span></div>
+                <div class="progress-track"><div id="barSenior" class="progress-fill" style="width:0%; background:#a855f7;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PART 2 CODE கீழே பேஸ்ட் பண்ணவும் -->
+	<section class="workspace-grid">
+	        <!-- Left: Universal Triage, Allergy Screening & Hybrid AI -->
+	        <div class="panel">
+	            <div class="panel-header">
+	                <h2>Patient Triage & Drug Safety Screening</h2>
+	                <span id="liveModeTag" class="status-pill status-online" style="font-size:11px;">HYBRID READY</span>
+	            </div>
+
+	            <div class="age-tabs">
+	                <button type="button" class="age-tab active" data-name="Aarav (Child)" data-age="5" data-weight="18">👶 Child (0–12y)</button>
+	                <button type="button" class="age-tab" data-name="Priya (Adult)" data-age="32" data-weight="62">🧑 Adult (13–59y)</button>
+	                <button type="button" class="age-tab" data-name="Lakshmi (Senior)" data-age="68" data-weight="58">👴 Senior (60+)</button>
+	            </div>
+
+	            <div class="vitals-row">
+	                <div>
+	                    <label for="patientName">Patient Name</label>
+	                    <input type="text" id="patientName" value="Aarav (Child)">
+	                </div>
+	                <div>
+	                    <label for="patientAge">Age (Yrs)</label>
+	                    <input type="number" id="patientAge" value="5" min="0" max="120">
+	                </div>
+	                <div>
+	                    <label for="patientWeight">Weight (kg)</label>
+	                    <input type="number" id="patientWeight" value="18" step="0.5">
+	                </div>
+	                <div>
+	                    <label for="patientTemp">Temp (°F)</label>
+	                    <input type="number" id="patientTemp" value="98.6" step="0.1">
+	                </div>
+	                <div>
+	                    <label for="knownAllergy">Drug Allergy</label>
+	                    <select id="knownAllergy">
+	                        <option value="NONE">None</option>
+	                        <option value="IBUPROFEN">Ibuprofen / NSAID</option>
+	                        <option value="PENICILLIN">Penicillin</option>
+	                        <option value="PARACETAMOL">Paracetamol</option>
+	                        <option value="SULFA">Sulfa Drugs</option>
+	                    </select>
+	                </div>
+	            </div>
+
+	            <label>Quick Emergency Presets</label>
+	            <div class="chips-row">
+	                <span class="chip" data-text="High fever and chills at night, needs immediate home care guidance.">🌡️ High Fever</span>
+	                <span class="chip" data-text="Minor accidental thermal burn on hand, skin is red.">🔥 Minor Burn</span>
+	                <span class="chip" data-text="Dizziness, dehydration, and weakness after heat exposure.">💧 Dehydration</span>
+	                <span class="chip" data-text="Small cut on finger with mild bleeding.">🩹 Cut / Bleeding</span>
+	            </div>
+
+	            <div class="form-group">
+	                <div class="form-label-row">
+	                    <label for="symptomInput" style="margin:0;">Describe Symptoms (Type or Speak)</label>
+	                    <button type="button" id="voiceBtn" class="btn-voice">🎙️ Speak Symptoms</button>
+	                </div>
+	                <textarea id="symptomInput" rows="3" placeholder="Enter symptoms or tap a quick preset above..."></textarea>
+	            </div>
+
+	            <button type="button" id="generateBtn" class="btn-primary">⚡ Run Hybrid AI & Drug Safety Engine</button>
+
+	            <!-- Result Box -->
+	            <div id="resultBox" class="result-box">
+	                <!-- Emergency SOS Card (Auto-shows on HIGH_EMERGENCY) -->
+	                <div id="sosEmergencyCard" class="sos-card">
+	                    <div class="sos-header">🚨 HIGH EMERGENCY DETECTED • IMMEDIATE ACTION RECOMMENDED</div>
+	                    <div class="sos-actions">
+	                        <a href="tel:108" class="btn-sos-call">📞 Call 108 Ambulance (Offline Ready)</a>
+	                        <a href="https://google.com" target="_blank" class="btn-sos-map">🏥 Find Nearest 24/7 Hospital</a>
+	                    </div>
+	                </div>
+
+	                <div class="metrics-bar">
+	                    <div class="metric-item">
+	                        <div class="metric-title">Java Risk Score</div>
+	                        <div id="resRiskScore" class="metric-val">-- / 100</div>
+	                    </div>
+	                    <div class="metric-item">
+	                        <div class="metric-title">Daily Hydration</div>
+	                        <div id="resHydration" class="metric-val">-- ml</div>
+	                    </div>
+	                    <div class="metric-item">
+	                        <div class="metric-title">AI Engine Used</div>
+	                        <div id="resAiMode" class="metric-val" style="font-size:11px;">--</div>
+	                    </div>
+	                </div>
+
+	                <div id="interactionAlertBox" class="interaction-alert"></div>
+	                <div id="dosageAlertBox" class="dosage-alert"></div>
+	                <div id="aiResponseText" class="result-content"></div>
+
+	                <div class="action-row">
+	                    <button type="button" id="copySummaryBtn" class="btn-outline">📋 Copy Doctor Report</button>
+	                    <button type="button" id="printSlipBtn" class="btn-outline" onclick="window.print()">🖨️ Print Hospital Slip</button>
+	                </div>
+	            </div>
+	        </div>
+
+	        <!-- Right: Enterprise Audit Logs -->
+	        <div class="panel">
+	            <div class="panel-header">
+	                <div>
+	                    <h2>Spring Boot Clinical Audit Logs</h2>
+	                    <span style="font-size:11px; color:#94a3b8;">Real-time JPA Persistence & Offline Sync</span>
+	                </div>
+	                <button type="button" id="manualSyncBtn" class="btn-sync">Sync Now</button>
+	            </div>
+
+	            <div class="filter-bar">
+	                <button type="button" id="filterAllBtn" class="filter-btn active">All Records</button>
+	                <button type="button" id="filterHighRiskBtn" class="filter-btn">🚨 High Emergency Only</button>
+	            </div>
+
+	            <div id="historyContainer" class="history-scroll">
+	                <p style="font-size:13px; color:#94a3b8;">No clinical records yet.</p>
+	            </div>
+	        </div>
+	    </section>
+	</main>
+	<script src="/live-gemini-bridge.js"></script>
+	<script src="/ai-engine.js?v=4"></script>
+	<script src="/live-gemini-bridge.js"></script>
+	<script src="/app.js?v=4"></script>
+	</body>
+	</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareSync AI | Autonomous Agentic AI & Firebase Cloud</title>
+    <link rel="stylesheet" href="/agentic-command.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="brand">
+            <div class="brand-logo">AI</div>
+            <div class="brand-title">
+                <h1>CareSync Autonomous Clinical Agent</h1>
+                <span>Multi-Step Agentic Reasoning • Firebase Cloud + Spring Boot Sync</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="/index.html" class="nav-btn">🩺 Triage</a>
+            <a href="/family-hub.html" class="nav-btn">👨‍👩‍👧‍👦 Vault</a>
+            <a href="/emergency-command.html" class="nav-btn">🚑 108 Dispatch</a>
+            <a href="/agentic-command.html" class="nav-btn active">🤖 Agentic AI</a>
+        </div>
+    </div>
+</header>
+
+<main class="main-wrapper">
+    <div class="agent-grid">
+        <!-- Left: Autonomous Agent Input -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>🤖 Autonomous Clinical Goal</h2>
+                <span id="fbCloudStatus" class="firebase-badge">🔥 Firebase Hybrid Ready</span>
+            </div>
+
+            <div class="form-grid-2">
+                <div>
+                    <label for="agPatientName">Patient Name</label>
+                    <input type="text" id="agPatientName" value="Aarav (Child)">
+                </div>
+                <div>
+                    <label for="agAge">Age (Years)</label>
+                    <input type="number" id="agAge" value="5" min="0" max="120">
+                </div>
+            </div>
+
+            <div class="form-grid-2">
+                <div>
+                    <label for="agWeight">Weight (kg)</label>
+                    <input type="number" id="agWeight" value="18" step="0.5">
+                </div>
+                <div>
+                    <label for="agTemp">Temp (°F)</label>
+                    <input type="number" id="agTemp" value="103.2" step="0.1">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="agAllergy">Known Drug Allergy</label>
+                <select id="agAllergy">
+                    <option value="IBUPROFEN">Ibuprofen / NSAID</option>
+                    <option value="NONE">None</option>
+                    <option value="PENICILLIN">Penicillin</option>
+                    <option value="PARACETAMOL">Paracetamol</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="agPrompt">Describe Emergency Situation (Agent will auto-triage, screen drugs & dispatch 108 if critical)</label>
+                <textarea id="agPrompt" rows="3">Child has sudden high fever 103.2°F with chills at night. Take full autonomous emergency action.</textarea>
+            </div>
+
+            <button type="button" id="runAgentBtn" class="btn-agent">🚀 Execute Autonomous Care Agent</button>
+        </div>
+
+        <!-- Right: Live Agent Reasoning & Tool Execution Trace -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>🧠 Live Agentic Reasoning & Tool Execution Trace</h2>
+            </div>
+
+            <div id="agentTraceContainer" class="trace-container">
+                <p style="font-size:13px; color:#94a3b8;">Click "Execute Autonomous Care Agent" to watch the AI Agent analyze vitals, check drug safety, auto-dispatch 108 ICU, and sync to Firebase + Spring Boot...</p>
+            </div>
+
+            <div id="agentAiGuidance" class="ai-guidance-box"></div>
+        </div>
+    </div>
+</main>
+
+<script src="/agentic-command.js"></script>
+</body>
+</html>

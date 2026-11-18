@@ -1,0 +1,189 @@
+:root {
+    --bg-main: #040812;
+    --bg-card: #0c1426;
+    --bg-input: #060b16;
+    --border-color: #1e293b;
+    --primary: #2563eb;
+    --accent: #06b6d4;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.navbar {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 14px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1260px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    color: #fff;
+}
+
+.brand-title h1 { font-size: 18px; font-weight: 800; }
+.brand-title span { font-size: 12px; color: var(--text-muted); }
+
+.nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.nav-btn {
+    background: var(--bg-input);
+    color: #e2e8f0;
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, #db2777, #7c3aed);
+    color: #fff;
+    border: none;
+}
+
+.main-wrapper { max-width: 1260px; margin: 24px auto; padding: 0 20px; }
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 22px;
+    align-items: start;
+}
+
+@media (max-width: 900px) { .vision-grid { grid-template-columns: 1fr; } }
+
+.panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.panel-header h2 { font-size: 16px; font-weight: 700; }
+
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.form-group { margin-bottom: 14px; }
+label { display: block; font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 5px; }
+
+input, select, textarea {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 12px;
+    color: #fff;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+/* Upload Zone */
+.upload-box {
+    border: 2px dashed #334155;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    background: var(--bg-input);
+    margin-bottom: 14px;
+    cursor: pointer;
+}
+
+.upload-box:hover { border-color: #ec4899; }
+
+.preview-img {
+    max-width: 100%;
+    max-height: 220px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: none;
+    border: 1px solid var(--border-color);
+}
+
+.btn-vision {
+    width: 100%;
+    background: linear-gradient(135deg, #db2777, #7c3aed);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* Verdict & Vision Output */
+.verdict-banner {
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: none;
+}
+
+.verdict-safe {
+    background: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #6ee7b7;
+}
+
+.verdict-danger {
+    background: rgba(239, 68, 68, 0.16);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: #fca5a5;
+}
+
+.vision-output {
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 14px;
+    color: #e2e8f0;
+    white-space: pre-wrap;
+    line-height: 1.65;
+}

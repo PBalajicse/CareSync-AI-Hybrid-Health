@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareSync AI | 108 Ambulance & Hospital ICU Dispatch</title>
+    <link rel="stylesheet" href="/emergency-command.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="brand">
+            <div class="brand-logo">108</div>
+            <div class="brand-title">
+                <h1>CareSync 108 Emergency & ICU Dispatch</h1>
+                <span>Smart Hospital Bed Allocation • Pre-Arrival Clinical Alert</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="/index.html" class="nav-btn">🩺 Triage AI</a>
+            <a href="/family-hub.html" class="nav-btn">👨‍👩‍👧‍👦 Family Vault</a>
+            <a href="/emergency-command.html" class="nav-btn active">🚑 108 Dispatch</a>
+        </div>
+    </div>
+</header>
+
+<main class="main-wrapper">
+    <!-- Live Nearby Hospital ICU Readiness Cards -->
+    <section id="hospitalGrid" class="hospital-grid">
+        <div class="hospital-card"><p style="color:#94a3b8; font-size:13px;">Loading live hospital ICU availability...</p></div>
+    </section>
+
+    <div class="dispatch-grid">
+        <!-- Left: Trigger Emergency Dispatch -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>🚨 Trigger Smart Ambulance & Hospital Alert</h2>
+            </div>
+
+            <div class="form-group">
+                <label for="dispPatientName">Patient Name</label>
+                <input type="text" id="dispPatientName" value="Aarav (Child)">
+            </div>
+
+            <div class="form-group">
+                <label for="dispAgeGroup">Patient Category</label>
+                <select id="dispAgeGroup">
+                    <option value="CHILD">Child (Pediatric ICU Routing)</option>
+                    <option value="ADULT">Adult (24/7 Trauma Wing)</option>
+                    <option value="SENIOR">Senior Citizen (Cardiac & Geriatric ICU)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dispType">Emergency Type</label>
+                <select id="dispType">
+                    <option value="HIGH_PEDIATRIC_FEVER">High Fever (>102.5°F) / Seizure Risk</option>
+                    <option value="THERMAL_BURN_TRAUMA">Severe Thermal Burn / Injury</option>
+                    <option value="ACUTE_DEHYDRATION">Severe Dehydration / Hypotension</option>
+                    <option value="RESPIRATORY_DISTRESS">Breathing Difficulty / Asthma</option>
+                </select>
+            </div>
+
+            <button type="button" id="triggerDispatchBtn" class="btn-sos">🚑 Dispatch Ambulance & Notify Hospital</button>
+        </div>
+
+        <!-- Right: Active Emergency Dispatch Tickets -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>📋 Active Emergency Dispatch Tickets (Spring DB)</h2>
+            </div>
+            <div id="ticketListContainer" class="ticket-list">
+                <p style="font-size:13px; color:#94a3b8;">No active dispatches yet.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="/emergency-command.js"></script>
+</body>
+</html>

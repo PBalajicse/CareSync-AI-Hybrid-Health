@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareSync AI | Live Community Outbreak Radar & Heatmap</title>
+    <link rel="stylesheet" href="/outbreak-radar.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="brand">
+            <div class="brand-logo">📡</div>
+            <div class="brand-title">
+                <h1>CareSync Live Outbreak Radar & Disease Surveillance</h1>
+                <span>Real-Time Symptom Cluster Detection • Community Health Heatmap</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="/master-command.html" class="nav-btn">🌐 Master HQ</a>
+            <a href="/index.html" class="nav-btn">🩺 Triage</a>
+            <a href="/agentic-command.html" class="nav-btn">🤖 Agentic</a>
+            <a href="/vitals-analytics.html" class="nav-btn">🪪 QR</a>
+            <a href="/vision-scanner.html" class="nav-btn">📸 Vision</a>
+            <a href="/genai-rag-lab.html" class="nav-btn">🧠 RAG</a>
+            <a href="/outbreak-radar.html" class="nav-btn active">📡 Outbreak Radar</a>
+        </div>
+    </div>
+</header>
+
+<main class="main-wrapper">
+    <div id="outbreakAlertBanner" class="alert-banner">⏳ Scanning Spring Boot clinical logs for regional symptom spikes...</div>
+
+    <div class="radar-grid">
+        <!-- Left: Animated Live Surveillance Radar Canvas -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>📡 Live Regional Bio-Surveillance Radar</h2>
+            </div>
+            <div class="canvas-box">
+                <canvas id="outbreakRadarCanvas" width="380" height="380"></canvas>
+            </div>
+        </div>
+
+        <!-- Right: Dynamic Zone Heatmap & Symptom Clusters -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>🗺️ Zone-Wise Disease Cluster Breakdown</h2>
+                <button type="button" id="refreshRadarBtn" class="nav-btn" style="cursor:pointer;">🔄 Refresh Live Scan</button>
+            </div>
+
+            <div id="zoneListContainer" class="zone-list"></div>
+
+            <div class="cluster-stats">
+                <div class="c-box">
+                    <div class="c-label">Viral Fever Cluster</div>
+                    <div id="cntFever" class="c-num" style="color:#f87171;">0</div>
+                </div>
+                <div class="c-box">
+                    <div class="c-label">Dehydration Cluster</div>
+                    <div id="cntDehydration" class="c-num" style="color:#fbbf24;">0</div>
+                </div>
+                <div class="c-box">
+                    <div class="c-label">Burn / Trauma</div>
+                    <div id="cntBurn" class="c-num" style="color:#38bdf8;">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="/outbreak-radar.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+:root {
+    --bg-main: #050914;
+    --bg-card: #0e1628;
+    --bg-input: #070c18;
+    --border-color: #1e293b;
+    --primary: #2563eb;
+    --danger: #ef4444;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.navbar {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 14px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #dc2626, #f59e0b);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+    color: #fff;
+}
+
+.brand-title h1 { font-size: 18px; font-weight: 800; }
+.brand-title span { font-size: 12px; color: var(--text-muted); }
+
+.nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.nav-btn {
+    background: var(--bg-input);
+    color: #e2e8f0;
+    border: 1px solid var(--border-color);
+    padding: 8px 13px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, #dc2626, #ea580c);
+    color: #fff;
+    border: none;
+}
+
+.main-wrapper { max-width: 1240px; margin: 24px auto; padding: 0 20px; }
+
+/* Hospital Live Bed Readiness Grid */
+.hospital-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.hospital-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.hosp-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.bed-badge {
+    background: rgba(16, 185, 129, 0.18);
+    color: #34d399;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.hosp-name { font-size: 15px; font-weight: 700; color: #fff; }
+.hosp-meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+/* Dispatch Workspace */
+.dispatch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 22px;
+    align-items: start;
+}
+
+@media (max-width: 880px) { .dispatch-grid { grid-template-columns: 1fr; } }
+
+.panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.panel-header h2 { font-size: 16px; font-weight: 700; }
+
+.form-group { margin-bottom: 14px; }
+label { display: block; font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 5px; }
+
+input, select {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 12px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.btn-sos {
+    width: 100%;
+    background: linear-gradient(135deg, #dc2626, #ea580c);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* Dispatch Ticket Cards */
+.ticket-list { display: flex; flex-direction: column; gap: 12px; max-height: 460px; overflow-y: auto; }
+
+.ticket-card {
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--danger);
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.ticket-top { display: flex; justify-content: space-between; font-size: 12px; font-weight: 800; color: #f87171; margin-bottom: 4px; }
+.ticket-hosp { font-size: 14px; font-weight: 700; color: #fff; }
+.ticket-meta { font-size: 12px; color: #38bdf8; margin-top: 4px; }

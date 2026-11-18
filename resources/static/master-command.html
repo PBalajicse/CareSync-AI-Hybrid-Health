@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareSync AI | Global Master Unified Command Center</title>
+    <link rel="stylesheet" href="/master-command.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="brand">
+            <div class="brand-logo">HQ</div>
+            <div class="brand-title">
+                <h1>CareSync Global Master Command Center</h1>
+                <span>Unified 8-Controller Enterprise Radar • Hands-Free Bilingual SOS</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="/master-command.html" class="nav-btn active">🌐 Master HQ</a>
+            <a href="/index.html" class="nav-btn">🩺 Triage</a>
+            <a href="/family-hub.html" class="nav-btn">👨‍👩‍👧‍👦 Vault</a>
+            <a href="/emergency-command.html" class="nav-btn">🚑 108</a>
+            <a href="/agentic-command.html" class="nav-btn">🤖 Agentic</a>
+            <a href="/vitals-analytics.html" class="nav-btn">🪪 QR</a>
+            <a href="/vision-scanner.html" class="nav-btn">📸 Vision</a>
+            <a href="/genai-rag-lab.html" class="nav-btn">🧠 RAG</a>
+        </div>
+    </div>
+</header>
+
+<main class="main-wrapper">
+    <!-- Live Enterprise KPI Counters -->
+    <section class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-label">Active Java Controllers</div>
+            <div class="kpi-val" style="color:#34d399;">8 Modules</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Clinical Triage Records</div>
+            <div id="kpiTriage" class="kpi-val">0</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Family Vault Profiles</div>
+            <div id="kpiFamily" class="kpi-val" style="color:#c084fc;">0</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">108 ICU Dispatches</div>
+            <div id="kpiDispatch" class="kpi-val" style="color:#f87171;">0</div>
+        </div>
+    </section>
+
+    <div class="master-grid">
+        <!-- Left: One-Tap Hands-Free Voice & Unified AI Command -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>🎙️ One-Tap Bilingual Voice & Autonomous SOS</h2>
+            </div>
+
+            <select id="masterLang">
+                <option value="EN">🌐 English Voice & AI Mode</option>
+                <option value="TA">🌐 தமிழ் (Tamil) Voice & AI Mode</option>
+            </select>
+
+            <button type="button" id="handsFreeVoiceBtn" class="sos-mic-btn">🎙️ Tap & Speak Emergency (Tamil / English)</button>
+
+            <textarea id="masterQueryInput" rows="3" placeholder="Speak or type any emergency (e.g., Child has 103°F fever and Ibuprofen allergy)..."></textarea>
+
+            <button type="button" id="masterExecuteBtn" class="btn-execute">⚡ Run All-in-One Autonomous Pipeline (RAG + Agent + 108)</button>
+
+            <div id="masterOutputBox" class="unified-output"></div>
+        </div>
+
+        <!-- Right: Live 7-Microservice Java Architecture Radar -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>🛰️ Spring Boot Enterprise Microservice Radar</h2>
+                <span id="radarStatus" style="font-size:11px; color:#34d399; font-weight:700;">● ALL SYSTEMS NOMINAL</span>
+            </div>
+            <div id="microserviceList" class="service-list">
+                <p style="color:#94a3b8; font-size:13px;">Polling Spring Boot controllers...</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="/master-command.js"></script>
+</body>
+</html>

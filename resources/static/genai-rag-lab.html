@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareSync AI | Grounded Clinical RAG & Multi-Turn GenAI Lab</title>
+    <link rel="stylesheet" href="/genai-rag-lab.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="brand">
+            <div class="brand-logo">RAG</div>
+            <div class="brand-title">
+                <h1>CareSync Grounded Clinical RAG & Socratic AI</h1>
+                <span>WHO Knowledge Grounding • Structured JSON Function Calling • Multi-Turn Memory</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="/index.html" class="nav-btn">🩺 Triage</a>
+            <a href="/family-hub.html" class="nav-btn">👨‍👩‍👧‍👦 Vault</a>
+            <a href="/emergency-command.html" class="nav-btn">🚑 108</a>
+            <a href="/agentic-command.html" class="nav-btn">🤖 Agentic</a>
+            <a href="/vitals-analytics.html" class="nav-btn">🪪 QR</a>
+            <a href="/vision-scanner.html" class="nav-btn">📸 Vision</a>
+            <a href="/genai-rag-lab.html" class="nav-btn active">🧠 GenAI RAG</a>
+        </div>
+    </div>
+</header>
+
+<main class="main-wrapper">
+    <div class="rag-grid">
+        <!-- Left: Multi-Turn Socratic AI Doctor Chat with WHO Citations -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>💬 Multi-Turn Clinical RAG Assistant (Zero Hallucination)</h2>
+                <button type="button" id="clearMemoryBtn" class="nav-btn" style="cursor:pointer;">🔄 Reset Memory</button>
+            </div>
+
+            <div id="chatStream" class="chat-stream">
+                <div class="msg-bubble msg-ai">
+                    <div class="citation-tag">✔ GROUNDED IN WHO & RED CROSS CLINICAL PROTOCOLS</div>
+                    <div>Hello! I am CareSync's Grounded Clinical RAG Assistant. Describe your child's or family member's symptoms—I will retrieve verified medical facts, ask follow-up clinical questions, and generate structured GenAI tool actions.</div>
+                </div>
+            </div>
+
+            <div class="chat-input-row">
+                <input type="text" id="ragUserInput" placeholder="e.g., My 5-year-old has 102.5°F fever and chills...">
+                <button type="button" id="sendRagBtn" class="btn-send">Send ➤</button>
+            </div>
+        </div>
+
+        <!-- Right: Live RAG Retrieved Context + Gemini Structured JSON Output -->
+        <div>
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>📚 Retrieved WHO Medical Context (RAG Grounding)</h2>
+                </div>
+                <div id="ragSourceBox" class="json-viewer">Ask a question on the left to inspect the exact WHO/Red Cross clinical facts retrieved before AI generation...</div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>⚡ Gemini Structured JSON & Tool Calling Output</h2>
+                </div>
+                <div id="structuredJsonBox" class="json-viewer">{
+  "status": "WAITING_FOR_QUERY",
+  "hallucinationGuard": "ENABLED"
+}</div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="/genai-rag-lab.js"></script>
+</body>
+</html>

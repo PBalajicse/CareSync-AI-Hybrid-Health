@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareSync AI | Multimodal Vision Medicine & Wound Scanner</title>
+    <link rel="stylesheet" href="/vision-scanner.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="brand">
+            <div class="brand-logo">AI+</div>
+            <div class="brand-title">
+                <h1>CareSync Multimodal Vision Scanner</h1>
+                <span>Medicine Label Verification • Skin/Burn Photo Triage (Online + Offline)</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="/index.html" class="nav-btn">🩺 Triage</a>
+            <a href="/family-hub.html" class="nav-btn">👨‍👩‍👧‍👦 Vault</a>
+            <a href="/emergency-command.html" class="nav-btn">🚑 108</a>
+            <a href="/agentic-command.html" class="nav-btn">🤖 Agentic</a>
+            <a href="/vitals-analytics.html" class="nav-btn">🪪 QR</a>
+            <a href="/vision-scanner.html" class="nav-btn active">📸 Vision AI</a>
+        </div>
+    </div>
+</header>
+
+<main class="main-wrapper">
+    <div class="vision-grid">
+        <!-- Left: Photo Upload & Patient Context -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>📸 Scan Medicine Bottle or Skin/Burn Photo</h2>
+            </div>
+
+            <div class="form-grid-2">
+                <div>
+                    <label for="visPatientName">Patient Name</label>
+                    <input type="text" id="visPatientName" value="Aarav (Child)">
+                </div>
+                <div>
+                    <label for="visAge">Age (Years)</label>
+                    <input type="number" id="visAge" value="5" min="0" max="120">
+                </div>
+            </div>
+
+            <div class="form-grid-2">
+                <div>
+                    <label for="visScanType">Scan Category</label>
+                    <select id="visScanType">
+                        <option value="MEDICINE_BOTTLE">💊 Medicine Bottle / Strip Label</option>
+                        <option value="SKIN_BURN_INJURY">🩹 Skin Rash / Minor Burn Photo</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="visAllergy">Known Drug Allergy</label>
+                    <select id="visAllergy">
+                        <option value="IBUPROFEN">Ibuprofen / NSAID</option>
+                        <option value="NONE">None</option>
+                        <option value="PENICILLIN">Penicillin</option>
+                        <option value="PARACETAMOL">Paracetamol</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="upload-box" onclick="document.getElementById('imageFileInput').click()">
+                <p style="font-size:13px; font-weight:700; color:#f472b6;">📷 Click to Capture or Upload Image (JPG/PNG)</p>
+                <span style="font-size:11px; color:#94a3b8;">Supports Gemini Multimodal Vision (Online) & On-Device Safety Audit (Offline)</span>
+                <input type="file" id="imageFileInput" accept="image/*" style="display:none;">
+                <img id="imagePreview" class="preview-img" alt="Uploaded Medical Preview">
+            </div>
+
+            <div class="form-group">
+                <label for="visNotes">Optional Label Text or Visual Notes (For Offline Verification)</label>
+                <input type="text" id="visNotes" placeholder="e.g., Ibuprofen 100mg syrup or red minor burn on hand">
+            </div>
+
+            <button type="button" id="scanImageBtn" class="btn-vision">🔍 Analyze Image with Multimodal Vision & Java Audit</button>
+        </div>
+
+        <!-- Right: AI Visual Analysis + Java Pharmacovigilance Verdict -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>🧠 Vision AI Diagnosis & Java Pharmacovigilance Audit</h2>
+            </div>
+
+            <div id="verdictBanner" class="verdict-banner"></div>
+            <div id="visionResultBox" class="vision-output">Upload a medicine bottle or wound photo (or enter label notes) and click "Analyze Image" to run Multimodal Vision AI + Java Safety Audit...</div>
+        </div>
+    </div>
+</main>
+
+<script src="/vision-scanner.js"></script>
+</body>
+</html>

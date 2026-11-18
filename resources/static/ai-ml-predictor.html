@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareSync AI | Predictive ML Algorithms Engine</title>
+    <link rel="stylesheet" href="/ai-ml-predictor.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="brand">
+            <div class="brand-logo">ML</div>
+            <div class="brand-title">
+                <h1>CareSync Predictive AI & ML Algorithms Lab</h1>
+                <span>Logistic Sigmoid Classifier • Linear Regression Forecaster • Cosine Vector Matcher</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="/master-command.html" class="nav-btn">🌐 Master HQ</a>
+            <a href="/index.html" class="nav-btn">🩺 Triage</a>
+            <a href="/agentic-command.html" class="nav-btn">🤖 Agentic</a>
+            <a href="/vitals-analytics.html" class="nav-btn">🪪 QR</a>
+            <a href="/vision-scanner.html" class="nav-btn">📸 Vision</a>
+            <a href="/genai-rag-lab.html" class="nav-btn">🧠 RAG</a>
+            <a href="/outbreak-radar.html" class="nav-btn">📡 Radar</a>
+            <a href="/ai-ml-predictor.html" class="nav-btn active">🧮 ML Algorithms</a>
+        </div>
+    </div>
+</header>
+
+<main class="main-wrapper">
+    <div class="ml-grid">
+        <!-- Left: ML Input Parameters -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>🧮 Patient Feature Vector Input</h2>
+            </div>
+
+            <div class="form-group">
+                <label for="mlPatientName">Patient Name (Used for Time-Series Regression)</label>
+                <input type="text" id="mlPatientName" value="Aarav (Child)">
+            </div>
+
+            <div class="form-grid-2">
+                <div>
+                    <label for="mlAge">Age (Years)</label>
+                    <input type="number" id="mlAge" value="5" min="0" max="120">
+                </div>
+                <div>
+                    <label for="mlTemp">Current Temp (°F)</label>
+                    <input type="number" id="mlTemp" value="101.8" step="0.1">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mlSymptoms">Symptom Text (For Cosine Vector Similarity)</label>
+                <textarea id="mlSymptoms" rows="3">High fever with chills and headache since evening.</textarea>
+            </div>
+
+            <button type="button" id="runMlBtn" class="btn-ml">⚡ Execute 3 Java ML Algorithms</button>
+        </div>
+
+        <!-- Right: Mathematical ML Outputs -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>📊 Live Predictive ML Inference Metrics</h2>
+            </div>
+
+            <div class="algo-cards">
+                <div class="algo-card">
+                    <div class="algo-name">1. Logistic Sigmoid Risk</div>
+                    <div id="valSigmoid" class="algo-val" style="color:#f87171;">-- %</div>
+                    <div class="algo-sub">Critical Escalation Prob.</div>
+                </div>
+                <div class="algo-card">
+                    <div class="algo-name">2. OLS Linear Regression</div>
+                    <div id="valForecast" class="algo-val" style="color:#fbbf24;">-- °F</div>
+                    <div class="algo-sub">Predicted Temp (+2 Hrs)</div>
+                </div>
+                <div class="algo-card">
+                    <div class="algo-name">3. Cosine Vector Match</div>
+                    <div id="valCosine" class="algo-val" style="color:#34d399;">--</div>
+                    <div id="subCluster" class="algo-sub">Clinical Cluster</div>
+                </div>
+            </div>
+
+            <div id="mlRawJson" class="ml-json-box">Click "Execute 3 Java ML Algorithms" to run Sigmoid Probability, Linear Regression Time-Series Forecasting, and Vector Cosine Similarity on Spring Boot...</div>
+        </div>
+    </div>
+</main>
+
+<script src="/ai-ml-predictor.js"></script>
+</body>
+</html>
